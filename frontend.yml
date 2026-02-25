@@ -1,0 +1,7 @@
+- name: Frontend playbook
+  hosts: all
+  tasks:
+    - name: Install nginx
+      ansible.builtin.dnf:
+        name: nginx
+        state: latest
