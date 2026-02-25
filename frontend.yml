@@ -1,7 +1,12 @@
 - name: Frontend playbook
   hosts: all
+  become: true
   tasks:
     - name: Install nginx
       ansible.builtin.dnf:
         name: nginx
         state: latest
+    - name: copy nginx
+      ansible.builtin.copy:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
